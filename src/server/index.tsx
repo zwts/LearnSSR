@@ -1,7 +1,7 @@
-const express = require('express');
-const childProcess = require('child_process');
+import express from 'express';
+import childProcess from 'child_process';
 
-const app  = express();
+const app = express();
 
 app.get('*', (req, res) => {
   res.send(`
