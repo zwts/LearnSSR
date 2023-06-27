@@ -1,13 +1,20 @@
 import express from 'express';
 import childProcess from 'child_process';
+import Home from '@/pages/Home';
+import path from 'path';
+import { renderToString } from 'react-dom/server';
 
 const app = express();
+const content = renderToString(<Home />);
+
+app.use(express.static(path.resolve(process.cwd(), 'client_build')));
 
 app.get('*', (req, res) => {
   res.send(`
     <html>
       <body>
-        <div>Hello ts</div>
+        <div id="root">${content}</div>
+        <script src="/index.js"></script>
       </body>
     </html>
   `);
