@@ -9,7 +9,19 @@ import { Helmet } from "react-helmet";
 
 const app = express();
 
+const bodyParser = require("body-parser");
+
 app.use(express.static(path.resolve(process.cwd(), 'client_build')));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extends: true }));
+
+app.post('/api/getDemoData', (req, res) => {
+  res.send({
+    data: req.body,
+    status_code: 0,
+  })
+});
 
 app.get('*', (req, res) => {
   const content = renderToString(

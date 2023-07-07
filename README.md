@@ -5,6 +5,9 @@
     ``` 
 - [express](https://expressjs.com/) `npm install express --save`.Express is a minimal and flexible Node.js web application framework 
 
+- [axios](https://axios-http.com/docs/intro) Axios is a simple promise based HTTP client for the browser and node.js
+- [body-parser](https://github.com/expressjs/body-parser#readme)Parse incoming request bodies in a middleware before your handlers
+
 - [webpack](https://webpack.wuhaolin.cn/)
   ```shell
   npm install @babel/preset-env babel-loader ts-loader webpack webpack-merge webpack-cli --save-dev
