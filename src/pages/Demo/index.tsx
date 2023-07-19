@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const Demo: FC<IProps> = (data) => {
-  const [content, setContent] = useState("");
+  // const [content, setContent] = useState("");
 
   // 客户端异步请求
   // useEffect(()=> {
@@ -58,5 +58,9 @@ const mapDispatchToProps = (dispatch: any) => {
 };
 
 const storeDemo: any = connect(mapStateToProps, mapDispatchToProps)(Demo);
+
+storeDemo.getInitProps = (store: any, data?: string) => {
+  return store.dispatch(getDemoData(data || '这是初始化的demo'));
+};
 
 export default storeDemo;
