@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "debugger": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
+    "cross-env": "^7.0.3",
     "husky": "^8.0.3",
     "sass": "^1.66.1",
     "typescript-plugin-css-modules": "^5.0.1"
